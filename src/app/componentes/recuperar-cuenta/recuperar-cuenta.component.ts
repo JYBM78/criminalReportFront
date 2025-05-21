@@ -31,7 +31,7 @@ export class RecuperarCuentaComponent {
     
     this.authService.enviarLinkRecuperacionPass(this.recuperarDTO).subscribe({
       next: (data) => {
-        alert('Revise en su badeja de entrada, si el correo existe se le ha enviado un correo de recuperación');
+        alert('Verifique su correo electrónico registrado. Se la ha enviado un código de recuperación');
         this.router.navigate(['/cambiar-contrasena', this.recuperarDTO.email]);
       },
       error: (error) => {

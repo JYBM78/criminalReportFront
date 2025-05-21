@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
-  title = 'Alerta Urbana';
+  title = 'Home';
 
   isLogged = false;
   isLoggedCliente = false;

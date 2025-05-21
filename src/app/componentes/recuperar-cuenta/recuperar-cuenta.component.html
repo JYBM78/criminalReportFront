@@ -1,28 +1,40 @@
-<div class="container mt-5">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header">
-            <h4 class="text-center">Recuperar cuenta</h4>
-            <!-- <app-alerta [alerta]="alerta"></app-alerta> -->
-          </div>
-          <div class="card-body">
-            <div class="text-justify mt-4">
-              <h6>El codigo de activacion tiene una vigencia de 15 minutos para poder activar la cuenta</h6>
-            </div>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="col-md-6">
+    <div class="card shadow rounded-4 border-0">
+      <div class="card-header text-center bg-white border-bottom-0 pt-4">
+        <h4 class="mb-0 text-success">
+          <i class="fa-solid fa-unlock-keyhole me-2"></i>Recuperar cuenta
+        </h4>
+      </div>
+      <div class="card-body p-4">
+        <p class="text-muted text-center mb-4">
+          El código de activación tiene una vigencia de <strong>15 minutos</strong>.
+        </p>
 
-            <form #recuperarCuentaForm="ngForm">
-              <div class="form-group" >
-
-                <label for="email">Correo electrónico:</label>
-                <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
-              </div>
-              <br>
-              <button [disabled]="recuperarCuentaForm.invalid" type="submit" class="btn btn-primary btn-block" (click)="recuperarContrasena()">Recuperar contraseña</button>
-              <br>
-            </form>
+        <form #recuperarCuentaForm="ngForm">
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico:</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Ingresa tu correo"
+              [(ngModel)]="email"
+              name="email"
+              required
+            />
           </div>
-        </div>
+
+          <button
+            type="submit"
+            class="btn btn-success w-100 rounded-pill"
+            [disabled]="recuperarCuentaForm.invalid"
+            (click)="recuperarContrasena()"
+          >
+            Recuperar contraseña
+          </button>
+        </form>
       </div>
     </div>
   </div>
+</div>
