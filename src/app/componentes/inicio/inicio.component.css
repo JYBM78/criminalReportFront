@@ -58,13 +58,14 @@ h1, h5 {
   background-color: #81C784;
   color: #222;
 }
-
-/* Estrellas */
+/*
+/* Estrellas 
 .stars {
   font-size: 1.5rem;
   cursor: pointer;
   margin-bottom: 0.5rem;
 }
+*/
 
 .estrella-activa {
   color: #FBC02D; /* amarillo */

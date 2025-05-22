@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { consultarMisReportesDTO } from '../../dto/consultar-mis-reporte-dto';
 import { consultarMapaDTO } from '../../dto/consultar-mapas';
-import { CalificarReporteDTO } from '../../dto/calificar-reporte-dto';
+//import { CalificarReporteDTO } from '../../dto/calificar-reporte-dto';
 import { ReporteService } from '../../servicios/reporte.service';
 import { HttpClient } from '@angular/common/http';
 import { MapaService } from '../../servicios/mapa.service';
@@ -151,36 +151,36 @@ export class InicioComponent implements OnInit {
     });
   }
 
-  estrellasArray = [1, 2, 3, 4, 5];
-  calificacion: number = 0;
-  hovered: number = 0;
+  //estrellasArray = [1, 2, 3, 4, 5];
+  //calificacion: number = 0;
+  //hovered: number = 0;
 
-  calificar(valor: number, idReporte: string) {
-    this.calificacion = valor;
+  //calificar(valor: number, idReporte: string) {
+  //  this.calificacion = valor;
 
-    const dto = new CalificarReporteDTO(valor.toString());
+  //  const dto = new CalificarReporteDTO(valor.toString());
 
-    this.reporteService.calificarReporte(dto, idReporte).subscribe({
-      next: (res) => {
-        console.log('Calificación enviada:', /*JSON.stringify(res)*/);
+  //  this.reporteService.calificarReporte(dto, idReporte).subscribe({
+  //    next: (res) => {
+  //      console.log('Calificación enviada:', /*JSON.stringify(res)*/);
 
-        this.getMisReporte();
-      },
-      error: (error) => {
-        console.error('Error al calificar:', JSON.stringify(error));
+  //      this.getMisReporte();
+  //    },
+  //    error: (error) => {
+  //      console.error('Error al calificar:', JSON.stringify(error));
 
-        if (error.status === 500) {
-          console.error('Error en el servidor');
-        } else {
-          if (error.error && error.error.mensaje) {
-            Swal.fire({text: error.error.mensaje, icon: 'error',
-            showConfirmButton: false, timer: 2000});
-          } else {
-            console.log('Se produjo un error, por favor verifica tus datos o intenta más tarde.');
-          }
-        }
-      }
-    });
-  }
+  //      if (error.status === 500) {
+  //        console.error('Error en el servidor');
+  //      } else {
+  //        if (error.error && error.error.mensaje) {
+  //          Swal.fire({text: error.error.mensaje, icon: 'error',
+  //          showConfirmButton: false, timer: 2000});
+  //        } else {
+  //          console.log('Se produjo un error, por favor verifica tus datos o intenta más tarde.');
+  //        }
+  //      }
+  //    }
+  //  });
+  //}
 
 }

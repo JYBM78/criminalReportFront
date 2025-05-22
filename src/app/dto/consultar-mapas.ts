@@ -10,8 +10,8 @@ export class consultarMapaDTO {
         public estado: string  = '',
         public ubicacion: UbicacionMapa = new UbicacionMapa(),
         public conteoImportantes: number  = 0,
-        public promedioEstrellas: number  = 0,
-        public calificaciones: { [key: string]: number } = {},
+        //public promedioEstrellas: number  = 0,
+        //public calificaciones: { [key: string]: number } = {},
         public rutaImagenes: string  = '',
     ) {}
 }
