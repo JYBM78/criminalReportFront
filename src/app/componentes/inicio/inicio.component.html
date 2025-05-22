@@ -23,17 +23,7 @@
             <div class="card-body d-flex flex-column">
               <h5 class="card-title fw-bold text-primary text-center">{{reporte.nombre}}</h5>
 
-              <!--
-              <div class="stars text-center my-2">
-                <span *ngFor="let star of estrellasArray; let i = index"
-                      [ngClass]="i < reporte.promedioEstrellas ? 'estrella-activa' : 'estrella-inactiva'"
-                      (click)="calificar(i + 1, reporte.id)"
-                      (mouseenter)="hovered = i + 1"
-                      (mouseleave)="hovered = 0">
-                  ★
-                </span>
-              </div>
-              -->
+              
               <p class="text-muted small mb-1"><strong>Estado:</strong> {{reporte.estado}}</p>
               <p class="text-muted small mb-2"><strong>Categoría:</strong> {{reporte.categoria}}</p>
               <p class="card-text flex-grow-1">{{reporte.descripcion}}</p>

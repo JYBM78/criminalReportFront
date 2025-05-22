@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { consultarMisReportesDTO } from '../../dto/consultar-mis-reporte-dto';
 import { consultarMapaDTO } from '../../dto/consultar-mapas';
-//import { CalificarReporteDTO } from '../../dto/calificar-reporte-dto';
 import { ReporteService } from '../../servicios/reporte.service';
 import { HttpClient } from '@angular/common/http';
 import { MapaService } from '../../servicios/mapa.service';
@@ -58,11 +57,7 @@ export class InicioComponent implements OnInit {
     this.mapaService.crearMapa();
   }
 
-  // cargarMapa(){
-  //   console.log("Mapa");
-    
-  //   this.mapaService.agregarMarcador(4.5342538812267605, -75.67251821051863, "Mi reporte");
-  // }
+  
 
   public getMisReporte() {
     this.reporteService.obtenerReportes(this.paginacion).subscribe({
@@ -77,11 +72,7 @@ export class InicioComponent implements OnInit {
 
           this.mapaService.pintarMarcadores(reportesVerificados);
 
-          // this.misReportes.forEach(r => {
-          //   if (r.ubicacion && typeof r.ubicacion.x === 'number' && typeof r.ubicacion.y === 'number') {
-          //     this.mapaService.agregarMarcadores(r.ubicacion.y, r.ubicacion.x, r.nombre);
-          //   }
-          // });
+          
 
         } else {
           this.salidaTexto = 'No se encontró el reporte';
@@ -125,8 +116,7 @@ export class InicioComponent implements OnInit {
 
         if (data) {
 
-          // this.reportesFiltrados = [...this.misReportes];
-          // console.log("Reportes Encontrados", this.misReportes);
+          
 
         } else {
           this.salidaTexto = 'No se encontró el reporte';
@@ -151,36 +141,6 @@ export class InicioComponent implements OnInit {
     });
   }
 
-  //estrellasArray = [1, 2, 3, 4, 5];
-  //calificacion: number = 0;
-  //hovered: number = 0;
-
-  //calificar(valor: number, idReporte: string) {
-  //  this.calificacion = valor;
-
-  //  const dto = new CalificarReporteDTO(valor.toString());
-
-  //  this.reporteService.calificarReporte(dto, idReporte).subscribe({
-  //    next: (res) => {
-  //      console.log('Calificación enviada:', /*JSON.stringify(res)*/);
-
-  //      this.getMisReporte();
-  //    },
-  //    error: (error) => {
-  //      console.error('Error al calificar:', JSON.stringify(error));
-
-  //      if (error.status === 500) {
-  //        console.error('Error en el servidor');
-  //      } else {
-  //        if (error.error && error.error.mensaje) {
-  //          Swal.fire({text: error.error.mensaje, icon: 'error',
-  //          showConfirmButton: false, timer: 2000});
-  //        } else {
-  //          console.log('Se produjo un error, por favor verifica tus datos o intenta más tarde.');
-  //        }
-  //      }
-  //    }
-  //  });
-  //}
+  
 
 }

@@ -3,7 +3,7 @@ import { ReporteDTO } from '../dto/reporte-dto';
 import { ActualizarReporteDTO } from '../dto/actualizar-reporte-dto';
 import { CambiarEstadoReporteDTO } from '../dto/cambiar-estado-reporte-dto';
 import { ReportesCercanosDTO } from '../dto/reportes-cercanos-dto';
-//import { CalificarReporteDTO } from '../dto/calificar-reporte-dto';
+
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MensajeDTO } from '../dto/MensajeDTO';
@@ -49,13 +49,7 @@ export class ReporteService {
     return this.http.post<any>(`${this.authURL}/${codigoReporte}/importante`, codigoReporte);
   }
 
-  //Los Usuarios no pueden calificar su propio reporte
-  /*
-  public calificarReporte(ReporteNuevo: CalificarReporteDTO, 
-    codigoReporte: string | undefined): Observable<MensajeDTO> {
-    return this.http.post<MensajeDTO>(`${this.authURL}/${codigoReporte}/calificacion`, ReporteNuevo);
-  }
-    */
+  
 
   public reportesCercanos(ReporteNuevo: ReportesCercanosDTO): Observable<MensajeDTO> {
     return this.http.post<MensajeDTO>(`${this.authURL}/cercanos`, ReporteNuevo);

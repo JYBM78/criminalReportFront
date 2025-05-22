@@ -43,10 +43,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.loginForm.patchValue({
-      correo: 'admin@criminal.report.com',
-      password: '1234567'
+      correo: '',
+      password: ''
     });
   }
+   
 
   public login(): void {
     this.loginDTO.email = this.loginForm.get('correo')?.value;
