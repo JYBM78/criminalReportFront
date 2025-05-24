@@ -13,9 +13,15 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
+  /*
   login(loginData: LoginDTO): Observable<any> {
     console.log('Datos enviados al backend (login):', loginData);
     return this.http.post(this.apiUrl+"/login", loginData);
+  }
+  */
+  login(loginData: LoginDTO): Observable<any> {
+  console.log(`Endpoint de login: ${this.apiUrl}/login`);
+  return this.http.post(`${this.apiUrl}/login`, loginData).pipe();
   }
   
   recuperarContrasena(loginData: LoginDTO): Observable<any> {
