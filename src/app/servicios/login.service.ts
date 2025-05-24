@@ -9,11 +9,12 @@ import { RutasDeNavegacion } from './rutadenavegacion';
 })
 export class LoginService {
 
-  private apiUrl = RutasDeNavegacion.apiUrl+"auth";
+  private apiUrl = RutasDeNavegacion.apiUrl+'auth';
 
   constructor(private http: HttpClient) {}
 
   login(loginData: LoginDTO): Observable<any> {
+    console.log('Datos enviados al backend (login):', loginData);
     return this.http.post(this.apiUrl+"/login", loginData);
   }
   

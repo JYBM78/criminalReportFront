@@ -14,11 +14,12 @@ import { RutasDeNavegacion } from './rutadenavegacion';
 })
 export class AuthService {
 
-  private authURL = RutasDeNavegacion.apiUrl+"auth";
+  private authURL = RutasDeNavegacion.apiUrl+'auth';
 
   constructor(private http: HttpClient) { }
 
   public login(loginData: { correo: string, password: string }): Observable<any> {
+    console.log('Datos que se enviarán al login:', loginData);
     return this.http.post(`${this.authURL}/login`, loginData);
   }
 
