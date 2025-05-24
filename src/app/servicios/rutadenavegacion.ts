@@ -1,5 +1,5 @@
 export const RutasDeNavegacion = {
     production: true,
-    apiUrl: 'http://localhost:8081/api/'
+    apiUrl: 'https://criminalreport.onrender.com/'
 };
   
