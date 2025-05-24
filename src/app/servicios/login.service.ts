@@ -22,7 +22,7 @@ export class LoginService {
   login(loginData: LoginDTO): Observable<any> {
   console.log(`Endpoint de login: ${this.apiUrl}/login`);
   return this.http.post(`${this.apiUrl}/login`, loginData).pipe();
-  }
+}
   
   recuperarContrasena(loginData: LoginDTO): Observable<any> {
     return this.http.post(this.apiUrl+"/recuperarPassword", loginData);
